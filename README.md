@@ -1,3 +1,4 @@
+````md
 # LineageIQ
 
 **Column-level data lineage & schema impact analysis engine.**
@@ -13,16 +14,29 @@ LineageIQ automatically builds a Neo4j knowledge graph from data sources and tra
 
 ---
 
-## Overview
+## Product Preview
+
+### Overview Dashboard
+![Dashboard](assets/dashboard.png)
+
+### Interactive Lineage Graph
+![Graph](assets/graph.png)
+
+### Blast Radius Analyzer
+![Impact](assets/impact.png)
+
+---
+
+## Why It Matters
 
 Modern data stacks contain dbt models, SQL transforms, Kafka topics, dashboards, ML features, and multiple storage systems. When schemas change, downstream failures are often discovered too late.
 
 LineageIQ solves this by:
 
-* Building a graph of datasets, columns, transforms, dashboards, and ML features
-* Tracing downstream and upstream dependencies
-* Estimating the impact of schema changes
-* Exposing the graph through a React UI and FastAPI backend
+- Building a graph of datasets, columns, transforms, dashboards, and ML features
+- Tracing downstream and upstream dependencies
+- Estimating the impact of schema changes
+- Exposing the graph through a React UI and FastAPI backend
 
 ---
 
@@ -66,7 +80,7 @@ Neo4j Graph Layer
 FastAPI + Redis + Workers
         ↓
 React + React Flow UI
-```
+````
 
 ---
 
@@ -93,6 +107,8 @@ Measured locally with Grafana k6 in Docker.
 * 100% success rate
 * 105.34 ms average latency
 * 271.06 ms p95 latency
+
+**Validated under concurrent load with zero failed requests.**
 
 ---
 
@@ -235,3 +251,6 @@ Production-oriented infrastructure files are included under `infra/`.
 ## License
 
 MIT
+
+```
+```
