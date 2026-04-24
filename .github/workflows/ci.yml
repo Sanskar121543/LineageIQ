@@ -1,11 +1,13 @@
-```yaml id="3b9i4e"
+
 name: LineageIQ CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   frontend-build:
@@ -37,11 +39,9 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: "3.11"
 
-      - run: pip install -r requirements.txt || true
       - run: pip install pytest ruff mypy
-
       - run: ruff . || true
       - run: mypy . || true
       - run: pytest || true
@@ -52,4 +52,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker compose build
-```
+
